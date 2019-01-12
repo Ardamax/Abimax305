@@ -69,7 +69,6 @@ public class TestCases
     {
         assertEquals("Unexpected number of public fields",
             0, Point.class.getFields().length);
-
         final List<Method> publicMethods = Arrays.stream(
             clazz.getDeclaredMethods())
                 .filter(m -> Modifier.isPublic(m.getModifiers()))
@@ -84,14 +83,13 @@ public class TestCases
             expectedMethodNames.size() == expectedMethodReturns.size());
         assertTrue("Invalid test configuration",
             expectedMethodNames.size() == expectedMethodParameters.size());
-
         for (int i = 0; i < expectedMethodNames.size(); i++)
         {
             Method method = clazz.getDeclaredMethod(expectedMethodNames.get(i),
                 expectedMethodParameters.get(i));
             assertEquals(expectedMethodReturns.get(i), method.getReturnType());
         }
-
+        
         // verify that fields are final
         final List<Field> nonFinalFields = Arrays.stream(
             clazz.getDeclaredFields())
@@ -99,6 +97,7 @@ public class TestCases
                 .collect(Collectors.toList());
 
         assertEquals("Unexpected non-final fields", 0, nonFinalFields.size());
+        
     }
 
 

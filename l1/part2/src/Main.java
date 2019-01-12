@@ -11,5 +11,10 @@ public class Main {
     public static void main(String[] args) {
         TestCases tc = new TestCases();
         tc.runTests();
+    	/*Point test = new Point(3, 4);
+    	System.out.println(test.getRadius());
+    	System.out.println(test.getAngle());
+    	Point rotTest = test.rotate90();
+    	System.out.printf("rotated: %d, %d\n", (int)rotTest.getX(), (int)rotTest.getY());*/
     }
 }
