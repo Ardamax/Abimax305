@@ -9,9 +9,7 @@ public class Main {
      * When you run "java main," this method is executed:
      */
     public static void main(String[] args) {
-        //TestCases tc = new TestCases();
-        //tc.runTests();
-
-
+        TestCases tc = new TestCases();
+        tc.runTests();
     }
 }
